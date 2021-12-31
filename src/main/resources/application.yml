@@ -1,0 +1,15 @@
+#mysql
+Spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sportPorject?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+
+  #mybatis
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.he.pojo
+
+  #端口号（Vue默认启动占用8080）
+server:
+  port: 9411

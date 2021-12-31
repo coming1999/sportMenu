@@ -5,4 +5,5 @@ package com.he.pojo;
  * @date 2021/12/29 23:20
  **/
 public class User {
+    private String username;
 }

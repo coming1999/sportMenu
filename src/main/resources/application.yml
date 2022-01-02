@@ -6,9 +6,12 @@ Spring:
     username: root
     password: 123456
 
-  #mybatis
-  mapper-locations: classpath:mapper/*.xml
+  #mybatis-plus
+mybatis-plus:
   type-aliases-package: com.he.pojo
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
 
   #端口号（Vue默认启动占用8080）
 server:

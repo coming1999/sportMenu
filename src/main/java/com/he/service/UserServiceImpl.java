@@ -5,6 +5,8 @@ import com.he.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author Kris He
  * @date 2022/01/02 14:52
@@ -18,5 +20,15 @@ public class UserServiceImpl implements UserService{
     @Override
     public User getUserByMessage(String username, String password) {
         return userMapper.getUserByMessage(username,password);
+    }
+
+    @Override
+    public List<User> getAllUsers(String username, int pageStart, int pageSize) {
+        return userMapper.getAllUsers(username,pageStart,pageSize);
+    }
+
+    @Override
+    public int getUserCounts(String username) {
+        return userMapper.getUserCounts(username);
     }
 }

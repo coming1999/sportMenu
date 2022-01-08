@@ -15,21 +15,21 @@ import java.util.Map;
  * @date 2022/01/07 13:39
  **/
 @RestController
-public class MeanController {
+public class MenuController {
 
     @Autowired
     MenuServiceImpl menuService;
 
     @RequestMapping("/menus")
     public Map<String,Object> getAllMenus(){
-        HashMap<String,Object> date = new HashMap();
+        HashMap<String,Object> data = new HashMap();
         List<MainMenu> menus = menuService.getMenus();
         if (menus != null){
-            date.put("menus",menus);
-            date.put("flag",200);
+            data.put("menus",menus);
+            data.put("flag",200);
         }else{
-            date.put("flag",404);
+            data.put("flag",404);
         }
-        return date;
+        return data;
     }
 }

@@ -5,4 +5,18 @@
     <select id="getUserByMessage" resultType="User">
         SELECT * FROM sportPorject.easyuser WHERE username = #{username} AND password = #{password} AND state =1;
     </select>
+    <select id="getAllUsers" resultType="User">
+        SELECT * FROM sportPorject.easyuser
+        <if test="username != null">
+            WHERE username like #{username}
+        </if>
+        LIMIT #{pageStart},#{pageSize}
+    </select>
+    <select id="getUserCounts" resultType="int">
+        SELECT count(*) FROM sportPorject.easyuser
+        <if test="username != null">
+            WHERE username like #{username}
+        </if>
+    </select>
+
 </mapper>

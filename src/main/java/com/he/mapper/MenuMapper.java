@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface MeanMapper {
+public interface MenuMapper {
     public List<MainMenu> getMenus();
 }

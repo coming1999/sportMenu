@@ -31,4 +31,14 @@ public class UserServiceImpl implements UserService{
     public int getUserCounts(String username) {
         return userMapper.getUserCounts(username);
     }
+
+    @Override
+    public int addUser(User user) {
+        return userMapper.addUser(user);
+    }
+
+    @Override
+    public int updateState(Integer id, Boolean state) {
+        return userMapper.updateState(id, state);
+    }
 }

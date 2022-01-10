@@ -1,6 +1,6 @@
 package com.he.service;
 
-import com.he.mapper.MeanMapper;
+import com.he.mapper.MenuMapper;
 import com.he.pojo.MainMenu;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ import java.util.List;
 public class MenuServiceImpl implements MenuService {
 
     @Autowired
-    MeanMapper meanMapper;
+    MenuMapper meanMapper;
 
     @Override
     public List<MainMenu> getMenus() {

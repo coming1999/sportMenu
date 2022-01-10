@@ -12,11 +12,20 @@
         </if>
         LIMIT #{pageStart},#{pageSize}
     </select>
+
     <select id="getUserCounts" resultType="int">
         SELECT count(*) FROM sportPorject.easyuser
         <if test="username != null">
             WHERE username like #{username}
         </if>
     </select>
+
+    <update id="updateState">
+        UPDATE sportPorject.easyuser SET state = #{state} WHERE id = #{id}
+    </update>
+
+    <insert id="addUser">
+        INSERT INTO sportPorject.easyuser (username,password,email,role,state) VALUES (username = #{username},password = #{password},email = #{email},role = #{role},state = #{state})
+    </insert>
 
 </mapper>

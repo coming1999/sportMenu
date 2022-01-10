@@ -3,9 +3,9 @@ package com.he.controller;
 import com.he.pojo.QueryInfo;
 import com.he.pojo.User;
 import com.he.service.UserServiceImpl;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -31,5 +31,18 @@ public class UserController {
         res.put("numbers",numbers);
         res.put("data",users);
         return res;
+    }
+    @RequestMapping("/updateState")
+    public String updateState(@Param("id") Integer id,@Param("state") Boolean state){
+        int i = userService.updateState(id, state);
+        return i > 0? "success":"error";
+    }
+
+    @RequestMapping("/addUser")
+    public String addUser(@RequestBody User user) {
+        user.setRole("普通用户");
+        user.setState(false);
+        int i = userService.addUser(user);
+        return i > 0 ? "success" : "error";
     }
 }
